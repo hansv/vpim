@@ -50,7 +50,7 @@ module Vpim
         if group
           line << group << '.'
         end
-        
+
         line << name
 
         params.each do |pname, pvalues|
@@ -141,7 +141,7 @@ module Vpim
             # v2.1 params have no '=' sign, figure out what kind of param it
             # is (either its a known encoding, or we treat it as a 'TYPE'
             # param).
-           
+
             if $2 == ""
               params = $1
               case $1
@@ -233,7 +233,7 @@ module Vpim
       # FIXME - breaks round-trip encoding, need to change this to not wrap
       # fields that are already wrapped.
       def encode(width=nil)
-        width = 75 unless width
+        width = 0 unless width
         l = @line
         # Wrap to width, unless width is zero.
         if width > 0
